@@ -17,14 +17,9 @@ def input_country():
          country = input(f'\n Визиты из какой страны/города оставить : ')
          if country.isalpha() and country: 
              return country.capitalize()
-country = input_country()
+# country = input_country()
 
-def sample_country(geo_logs, country):
+def sample_country(country_):
   return [
     log for log in geo_logs 
-    if country in next(iter(log.values()))]
-
-
-assert sample_country(geo_logs=geo_logs, country='Москва') == [{'visit1': ['Москва', 'Россия']}]
-assert sample_country(geo_logs=geo_logs, country='Тула') == [{'visit7': ['Тула', 'Россия']}, {'visit8': ['Тула', 'Россия']}]
-assert sample_country(geo_logs=geo_logs, country='Москва') == [{'visit1': ['Москва', 'Россия']}]
+    if country_ in next(iter(log.values()))]
